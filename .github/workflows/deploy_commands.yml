@@ -35,6 +35,6 @@ jobs:
       - name: Run deployment script
         run: node deploy-commands.js
         env:
-          TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
