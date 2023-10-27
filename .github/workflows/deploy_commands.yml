@@ -5,6 +5,16 @@ on:
     paths:
       - 'commands/**'
       - 'deploy-commands.js'
+    branches:
+      - main
+      - master
+  pull_request:
+    paths:
+      - 'commands/**'
+      - 'deploy-commands.js'
+    branches:
+      - main
+      - master
 
 jobs:
   deploy:
