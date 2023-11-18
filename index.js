@@ -1,10 +1,30 @@
-const fs = require('node:fs');
-const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const dotenv = require('dotenv');
+import Pokedex from 'pokedex-promise-v2';
+import fs from 'fs';
+import path from 'path';
+import { Client, Collection, Events, GatewayIntentBits } from 'discord.js';
+import dotenv from 'dotenv';
+import { sequelize } from './sequelize.js';
+import { fileURLToPath } from 'node:url';
+
+const P = new Pokedex();
+
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 dotenv.config();
 const token = process.env.TOKEN;
+
+try {
+    sequelize.authenticate().then(r => console.log(r));
+    console.log('Connection has been established successfully.');
+} catch (error) {
+    console.error('Unable to connect to the database:', error);
+}
+
+P.getPokedexList().then(function (response) {
+    console.log(response);
+});
+
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 

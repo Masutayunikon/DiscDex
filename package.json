@@ -2,7 +2,8 @@
   "name": "discdex",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.13.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "pokedex-promise-v2": "^4.1.1",
+    "sequelize": "^6.34.0"
   },
   "devDependencies": {
     "eslint": "^8.52.0"

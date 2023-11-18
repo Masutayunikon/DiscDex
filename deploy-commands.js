@@ -1,6 +1,6 @@
-const { REST, Routes } = require('discord.js');
-const fs = require('node:fs');
-const path = require('node:path');
+import { REST, Routes } from 'discord.js';
+import fs from 'fs';
+import path from 'path';
 
 const clientId = process.env.CLIENT_ID;
 const token = process.env.DISCORD_TOKEN;
